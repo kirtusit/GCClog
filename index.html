@@ -34,90 +34,15 @@
       </section>
     </div>
 
-    <!-- CTA: NEW Become Client button (on top) -->
+    <!-- ЕДИНСТВЕННАЯ CTA -->
     <div class="cta-card">
-      <button id="openClientBtn" class="cta-button" type="button" data-i18n="ctaClient">Стать нашим клиентом</button>
+      <button id="openContactsBtn" class="cta-button" type="button" data-i18n="ctaContact" aria-expanded="false">Связаться с нами</button>
     </div>
 
-    <!-- CTA: Request button -->
-    <div class="cta-card">
-      <button id="openRequestBtn" class="cta-button" type="button" data-i18n="cta">Отправить заявку</button>
-    </div>
+    <!-- Подпись и контакты (скрыты по умолчанию) -->
+    <div class="or-label" id="contactsLabel" data-i18n="orSend" hidden>Свяжитесь удобным способом:</div>
 
-    <!-- Hidden request form -->
-    <form id="requestForm" class="request-form" hidden novalidate>
-      <div class="field">
-        <span class="field-label">Тип заявки</span>
-        <div class="radio-group" role="radiogroup" aria-label="Тип заявки">
-          <label><input type="radio" name="reqType" value="export" checked> Экспорт</label>
-          <label><input type="radio" name="reqType" value="import"> Импорт</label>
-          <label><input type="radio" name="reqType" value="transit"> Транзит</label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="reqSubject">Тема заявки</label>
-        <input id="reqSubject" class="input" type="text" placeholder="Например: Оформление груза 20FT, Китай → Латвия" />
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="reqBody">Текст заявки</label>
-        <textarea id="reqBody" class="textarea" rows="5" placeholder="Опишите задачу: товар, код ТН ВЭД (если есть), маршрут, сроки и т.д."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="reqFiles">Файлы</label>
-        <input id="reqFiles" class="file" type="file" multiple />
-      </div>
-
-      <div class="form-actions">
-        <button type="button" id="cancelRequest" class="btn secondary">Отмена</button>
-        <button type="submit" id="submitRequest" class="btn primary">Отправить</button>
-      </div>
-    </form>
-
-    <!-- Подпись перед блоками контактов -->
-    <div class="or-label" data-i18n="orSend">Или отправьте информацию на:</div>
-
-    <!-- Hidden client form (Become our client) -->
-    <!-- Подключаем внешний сервис: просто action + name у полей -->
-    <form id="clientForm"
-          class="request-form"
-          hidden
-          method="POST"
-          action="https://formsubmit.co/office@gcclog.com">
-      <!-- служебные поля для сервиса -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_subject" id="clientSubjectHidden" value="">
-      <input type="hidden" name="Lang" id="clientLangHidden" value="ru">
-
-      <div class="field">
-        <label class="field-label" for="clientCompany">Название компании</label>
-        <input id="clientCompany" name="Company" class="input" type="text" required
-               placeholder="Например: SIA «Baltic Trade»">
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="clientContacts">Контактные данные</label>
-        <textarea id="clientContacts" name="Contacts" class="textarea" rows="4" required
-                  placeholder="Имя, телефон, e-mail, сайт"></textarea>
-      </div>
-
-      <div class="field">
-        <label class="field-label" for="clientSource">Откуда узнали о компании</label>
-        <input id="clientSource" name="Source" class="input" type="text" required
-               placeholder="Рекомендации, Google, соцсети и т.п.">
-      </div>
-
-      <div class="form-actions">
-        <button type="button" id="cancelClient" class="btn secondary">Отмена</button>
-        <button type="submit" id="submitClient" class="btn primary">Отправить</button>
-      </div>
-    </form>
-
-    <!-- Контакты -->
-    <div class="contacts-row">
+    <div class="contacts-row" id="contactsRow" hidden>
       <!-- Email -->
       <a class="contact-card mail" id="contactEmail" href="#">
         <div class="row-left">
@@ -128,7 +53,7 @@
           <span class="contact-meta" id="contactEmailMeta">office@gcclog.com</span>
         </div>
         <div class="row-right">
-          <button class="copy-btn" id="copyEmailBtn" type="button" aria-pressed="false" aria-live="polite">Скопировать</button>
+          <button class="copy-btn" id="copyEmailBtn" type="button" aria-pressed="false" aria-live="polite" data-i18n="copy">Скопировать</button>
         </div>
       </a>
 
@@ -142,8 +67,8 @@
           <span class="contact-meta" id="telegramHandleMeta">@yourtelegram</span>
         </div>
         <div class="row-right">
-          <button class="copy-btn" id="copyTelegramBtn" type="button" aria-pressed="false" aria-live="polite">Скопировать</button>
-          <button class="write-btn" id="writeTelegramBtn" type="button">Написать</button>
+          <button class="copy-btn" id="copyTelegramBtn" type="button" aria-pressed="false" aria-live="polite" data-i18n="copy">Скопировать</button>
+          <button class="write-btn" id="writeTelegramBtn" type="button" data-i18n="write">Написать</button>
         </div>
       </div>
     </div>
@@ -156,6 +81,6 @@
   </footer>
 
   <script defer src="app.js"></script>
-  <noscript>Для корректной работы переключения языков и формы включите JavaScript.</noscript>
+  <noscript>Для корректной работы переключения языков включите JavaScript.</noscript>
 </body>
 </html>
