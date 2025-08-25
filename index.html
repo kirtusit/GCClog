@@ -33,46 +33,56 @@
         </div>
       </section>
     </div>
-
-    <!-- ЕДИНСТВЕННАЯ CTA -->
-    <div class="cta-card">
-      <button id="openContactsBtn" class="cta-button" type="button" data-i18n="ctaContact" aria-expanded="false">Связаться с нами</button>
-    </div>
-
-    <!-- Подпись и контакты (скрыты по умолчанию) -->
-    <div class="or-label" id="contactsLabel" data-i18n="orSend" hidden>Свяжитесь удобным способом:</div>
-
-    <div class="contacts-row" id="contactsRow" hidden>
-      <!-- Email -->
-      <a class="contact-card mail" id="contactEmail" href="#">
-        <div class="row-left">
-          <svg class="mail-logo" viewBox="0 0 24 24" role="img" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M3.5 7.5 L12 12.5 L20.5 7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="contact-meta" id="contactEmailMeta">office@gcclog.com</span>
-        </div>
-        <div class="row-right">
-          <button class="copy-btn" id="copyEmailBtn" type="button" aria-pressed="false" aria-live="polite" data-i18n="copy">Скопировать</button>
-        </div>
-      </a>
-
-      <!-- Telegram -->
-      <div class="contact-card" id="contactTelegramCard" aria-label="Telegram">
-        <div class="row-left">
-          <svg class="tg-logo" viewBox="0 0 24 24" role="img" aria-hidden="true">
-            <path d="M21.5 3.5L3.1 10.8c-.8.3-.8 1.5.02 1.8l4.7 1.6 1.8 4.9c.2.6 1 .7 1.4.3l2.6-2.7 4.7 3.5c.6.5 1.6.1 1.8-.7l2-14.2c.1-.8-.7-1.4-1.4-1.1zM8 12.6l9.7-5.9-7.5 7-.4 2.8 1.4-1.5 4 3"
-                  fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="contact-meta" id="telegramHandleMeta">@yourtelegram</span>
-        </div>
-        <div class="row-right">
-          <button class="copy-btn" id="copyTelegramBtn" type="button" aria-pressed="false" aria-live="polite" data-i18n="copy">Скопировать</button>
-          <button class="write-btn" id="writeTelegramBtn" type="button" data-i18n="write">Написать</button>
-        </div>
-      </div>
-    </div>
   </main>
+
+  <!-- Плавающий док контактов (справа) -->
+  <div class="contact-dock" role="toolbar" aria-label="Быстрые контакты">
+    <button id="dockTelegram" class="dock-btn tg" type="button"
+            aria-controls="flyoutTelegram" aria-expanded="false" title="Telegram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21.5 3.5L3.1 10.8c-.8.3-.8 1.5.02 1.8l4.7 1.6 1.8 4.9c.2.6 1 .7 1.4.3l2.6-2.7 4.7 3.5c.6.5 1.6.1 1.8-.7l2-14.2c.1-.8-.7-1.4-1.4-1.1zM8 12.6l9.7-5.9-7.5 7-.4 2.8 1.4-1.5 4 3"
+              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button id="dockEmail" class="dock-btn mail" type="button"
+            aria-controls="flyoutEmail" aria-expanded="false" title="Email">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M3.5 7.5 L12 12.5 L20.5 7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Затемняющий фон -->
+  <div id="backdrop" class="backdrop" hidden></div>
+
+  <!-- Флай-ауты: в роли самой карточки -->
+  <aside id="flyoutTelegram" class="flyout" role="dialog" aria-modal="true" hidden>
+    <div class="row-left">
+      <svg class="tg-logo" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21.5 3.5L3.1 10.8c-.8.3-.8 1.5.02 1.8l4.7 1.6 1.8 4.9c.2.6 1 .7 1.4.3l2.6-2.7 4.7 3.5c.6.5 1.6.1 1.8-.7l2-14.2c.1-.8-.7-1.4-1.4-1.1zM8 12.6l9.7-5.9-7.5 7-.4 2.8 1.4-1.5 4 3"
+              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="contact-meta" id="flyoutTelegramHandle">@yourtelegram</span>
+    </div>
+    <div class="row-right">
+      <button class="copy-btn" id="copyTgBtn" type="button" aria-pressed="false" data-i18n="copy">Скопировать</button>
+      <button class="write-btn" id="writeTgBtn" type="button" data-i18n="write">Написать</button>
+    </div>
+  </aside>
+
+  <aside id="flyoutEmail" class="flyout" role="dialog" aria-modal="true" hidden>
+    <div class="row-left">
+      <svg class="mail-logo" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M3.5 7.5 L12 12.5 L20.5 7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <a id="flyoutEmailLink" class="contact-meta" href="mailto:office@gcclog.com">office@gcclog.com</a>
+    </div>
+    <div class="row-right">
+      <button class="copy-btn" id="copyMailBtn" type="button" aria-pressed="false" data-i18n="copy">Скопировать</button>
+    </div>
+  </aside>
 
   <footer class="site-footer" id="footer">
     <div class="container footer-inner">
