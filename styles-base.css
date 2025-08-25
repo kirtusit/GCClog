@@ -49,6 +49,7 @@ h1{margin:12px 0 10px; line-height:1.1; font-weight:700; font-size:clamp(34px,6v
   margin:24px auto; max-width:420px;
   padding:0; display:flex; justify-content:center; align-items:center;
 }
+.cta-card + .cta-card{ margin-top:12px; } /* компактнее, когда две кнопки подряд */
 .cta-button{
   width:100%; padding:12px 18px; font-weight:600; font-size:15px;
   border-radius:999px; border:1px solid color-mix(in srgb, var(--accent) 60%, var(--line) 40%);
@@ -57,6 +58,11 @@ h1{margin:12px 0 10px; line-height:1.1; font-weight:700; font-size:clamp(34px,6v
 }
 .cta-button:hover{background:color-mix(in srgb, var(--accent) 45%, transparent); transform:translateY(-1px)}
 @media (max-width:520px){ .cta-card{max-width:360px} }
+.or-label{
+  margin:8px auto 6px; text-align:center;
+  color:var(--muted); font-size:14px; line-height:1.4;
+  max-width:900px; padding:0 12px;
+}
 
 /* ===== Contacts row (Email + Telegram как «кнопки») ===== */
 .contacts-row{

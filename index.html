@@ -34,12 +34,17 @@
       </section>
     </div>
 
+    <!-- CTA: NEW Become Client button (on top) -->
+    <div class="cta-card">
+      <button id="openClientBtn" class="cta-button" type="button" data-i18n="ctaClient">Стать нашим клиентом</button>
+    </div>
+
     <!-- CTA: Request button -->
     <div class="cta-card">
       <button id="openRequestBtn" class="cta-button" type="button" data-i18n="cta">Отправить заявку</button>
     </div>
 
-    <!-- Hidden request form (shown after CTA click) -->
+    <!-- Hidden request form -->
     <form id="requestForm" class="request-form" hidden novalidate>
       <div class="field">
         <span class="field-label">Тип заявки</span>
@@ -71,7 +76,47 @@
       </div>
     </form>
 
-    <!-- Контакты в ряд -->
+    <!-- Подпись перед блоками контактов -->
+    <div class="or-label" data-i18n="orSend">Или отправьте информацию на:</div>
+
+    <!-- Hidden client form (Become our client) -->
+    <!-- Подключаем внешний сервис: просто action + name у полей -->
+    <form id="clientForm"
+          class="request-form"
+          hidden
+          method="POST"
+          action="https://formsubmit.co/office@gcclog.com">
+      <!-- служебные поля для сервиса -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" id="clientSubjectHidden" value="">
+      <input type="hidden" name="Lang" id="clientLangHidden" value="ru">
+
+      <div class="field">
+        <label class="field-label" for="clientCompany">Название компании</label>
+        <input id="clientCompany" name="Company" class="input" type="text" required
+               placeholder="Например: SIA «Baltic Trade»">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="clientContacts">Контактные данные</label>
+        <textarea id="clientContacts" name="Contacts" class="textarea" rows="4" required
+                  placeholder="Имя, телефон, e-mail, сайт"></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="clientSource">Откуда узнали о компании</label>
+        <input id="clientSource" name="Source" class="input" type="text" required
+               placeholder="Рекомендации, Google, соцсети и т.п.">
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="cancelClient" class="btn secondary">Отмена</button>
+        <button type="submit" id="submitClient" class="btn primary">Отправить</button>
+      </div>
+    </form>
+
+    <!-- Контакты -->
     <div class="contacts-row">
       <!-- Email -->
       <a class="contact-card mail" id="contactEmail" href="#">
@@ -87,21 +132,21 @@
         </div>
       </a>
 
-     <!-- Telegram -->
-    <div class="contact-card" id="contactTelegramCard" aria-label="Telegram">
-      <div class="row-left">
-        <svg class="tg-logo" viewBox="0 0 24 24" role="img" aria-hidden="true">
-          <path d="M21.5 3.5L3.1 10.8c-.8.3-.8 1.5.02 1.8l4.7 1.6 1.8 4.9c.2.6 1 .7 1.4.3l2.6-2.7 4.7 3.5c.6.5 1.6.1 1.8-.7l2-14.2c.1-.8-.7-1.4-1.4-1.1zM8 12.6l9.7-5.9-7.5 7-.4 2.8 1.4-1.5 4 3"
-            fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="contact-meta" id="telegramHandleMeta">@yourtelegram</span>
-      </div>
-      <div class="row-right">
-        <button class="copy-btn" id="copyTelegramBtn" type="button" aria-pressed="false" aria-live="polite">Скопировать</button>
-        <button class="write-btn" id="writeTelegramBtn" type="button">Написать</button>
+      <!-- Telegram -->
+      <div class="contact-card" id="contactTelegramCard" aria-label="Telegram">
+        <div class="row-left">
+          <svg class="tg-logo" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M21.5 3.5L3.1 10.8c-.8.3-.8 1.5.02 1.8l4.7 1.6 1.8 4.9c.2.6 1 .7 1.4.3l2.6-2.7 4.7 3.5c.6.5 1.6.1 1.8-.7l2-14.2c.1-.8-.7-1.4-1.4-1.1zM8 12.6l9.7-5.9-7.5 7-.4 2.8 1.4-1.5 4 3"
+                  fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="contact-meta" id="telegramHandleMeta">@yourtelegram</span>
+        </div>
+        <div class="row-right">
+          <button class="copy-btn" id="copyTelegramBtn" type="button" aria-pressed="false" aria-live="polite">Скопировать</button>
+          <button class="write-btn" id="writeTelegramBtn" type="button">Написать</button>
+        </div>
       </div>
     </div>
-
   </main>
 
   <footer class="site-footer" id="footer">
