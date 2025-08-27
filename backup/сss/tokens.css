@@ -1,0 +1,30 @@
+/* Глобальные токены и базовые вещи */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+:root{
+  --header-bg: rgb(5, 36, 57);
+  --header-fg: #fff;
+  --header-h: 80px;  /* высота хедера */
+  --footer-h: 40px;  /* примерная высота футера (под твой small-текст) */
+  --proc-bg: #c9d4ea;             /* фон ячеек (приближение к образцу) */
+  --proc-border: rgba(5,36,57,.35);/* цвет линий/рамок блока процедур */
+
+  /* segmented control (хедер) */
+  --pill-bg: rgba(255,255,255,0.08);
+  --pill-border: rgba(255,255,255,0.18);
+  --pill-slider: #ffffff;
+  --pill-text: rgba(255,255,255,0.85);
+  --pill-text-active: var(--header-bg);
+  --radius-pill: 9999px;
+
+  /* контейнер */
+  --container-max: 1200px;
+  --container-pad: clamp(16px, 4vw, 40px);
+
+  /* кнопки */
+  --cta: rgb(86, 106, 229);
+  --cta-dark: rgb(72, 90, 208);
+  --cherry: #b00020;
+  --cherry-dark: #8e001b;
+}

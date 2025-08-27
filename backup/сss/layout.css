@@ -1,0 +1,33 @@
+/* Макет страницы и контейнер */
+body.layout{
+  margin: 0;
+  background: #fff;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+    "DejaVu Sans", "Cantarell", "Ubuntu", sans-serif;
+}
+
+/* Универсальный контейнер */
+.container{
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* Контент: верх (70%) и низ (30%) */
+.content{
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-rows: auto auto; 
+}
+
+/* на очень коротких экранах убираем принудительное соотношение 70:30 */
+@media (max-height: 740px){
+  .content{ grid-template-rows: auto auto; }
+  .section-top, .section-bottom{ padding-block: 24px; }
+}

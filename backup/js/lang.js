@@ -80,12 +80,6 @@
     lv: 'Kontakti'
   };
 
-  const PROC = {
-  en: { docs: 'Collect documents',    decl: 'File the declaration',  cleared: 'Goods released' },
-  lv: { docs: 'Saņemam dokumentus',   decl: 'Noformējam deklarāciju', cleared: 'Preces izlaistas' },
-  ru: { docs: 'Получаем документы',   decl: 'Оформляем декларацию',   cleared: 'Товар выпущен' }
-  };
-
   const ui = document.querySelector('.lang-ui');
   if (!ui) return;
 
@@ -111,10 +105,6 @@
   const importDesc  = document.getElementById('import-desc');
   const exportDesc  = document.getElementById('export-desc');
   const transitDesc = document.getElementById('transit-desc');
-
-  const procDocs   = document.getElementById('proc-docs');
-  const procDecl   = document.getElementById('proc-decl');
-  const procCleared= document.getElementById('proc-cleared');
 
   // Инициализация
   const saved = (localStorage.getItem(STORAGE_KEY) || '').toLowerCase();
@@ -158,9 +148,5 @@
     if (importDesc)  importDesc.textContent  = (DESC[lang] || DESC.en).import;
     if (exportDesc)  exportDesc.textContent  = (DESC[lang] || DESC.en).export;
     if (transitDesc) transitDesc.textContent = (DESC[lang] || DESC.en).transit;
-
-    if (procDocs)    procDocs.textContent    = (PROC[lang] || PROC.en).docs;
-    if (procDecl)    procDecl.textContent    = (PROC[lang] || PROC.en).decl;
-    if (procCleared) procCleared.textContent = (PROC[lang] || PROC.en).cleared;
   }
 })();

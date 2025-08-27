@@ -1,0 +1,73 @@
+/* Нижняя секция */
+.section-bottom{
+  background: var(--header-bg);
+  color: #fff;
+  padding-block: clamp(24px, 6vw, 72px);
+  display: flex;          /* центр по вертикали секции целиком */
+  align-items: center;
+  min-height: max(0px, calc((100svh - var(--header-h) - var(--footer-h)) * 0.3));
+}
+
+.section-bottom-inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* слева / справа */
+  gap: clamp(24px, 8vw, 120px);
+  align-items: center;    /* центр по вертикали внутри */
+  justify-items: center;  /* центр по горизонтали внутри */
+}
+
+/* Левая колонка */
+.bottom-left{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;         /* читаем слева */
+  justify-content: center;
+  gap: 14px;                       /* больше воздуха между строками */
+  text-align: left;
+}
+
+.bottom-left .line{
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.3;
+  letter-spacing: .01em;
+  position: relative;
+  padding-left: 28px;        /* место под маркер */
+}
+
+.bottom-left .line::before{ content: none !important; }
+
+.bottom-left .line{
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.35;
+  letter-spacing: .005em;
+  color: #fff;                     /* чисто белый на фирменном фоне */
+  padding: 0;                      /* без отступов слева */
+}
+
+/* Правая колонка */
+.bottom-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.contacts-title{
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Кнопки внизу справа (сейчас центрируем) */
+.bottom-actions{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
