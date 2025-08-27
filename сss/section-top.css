@@ -1,0 +1,42 @@
+/* Верхняя секция */
+.section-top{
+  background: #fff;
+  padding-block: clamp(24px, 6vw, 72px);
+  display: flex;          /* центрируем содержимое по вертикали */
+  align-items: center;
+  min-height: max(0px, calc((100svh - var(--header-h) - var(--footer-h)) * 0.7));
+}
+
+.section-top-inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* слева / справа */
+  gap: clamp(24px, 8vw, 120px);
+  align-items: center;    /* центр по вертикали */
+  justify-items: center;  /* центр по горизонтали */
+}
+
+/* Левая верхняя часть */
+.section-topleft{
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* Правая верхняя часть — обёртка под панель */
+.section-topright{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Заголовок вверху слева */
+.hero-title{
+  color: var(--header-bg);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-size: clamp(22px, 3.5vw, 40px);
+  margin: 0;
+  text-align: center; /* центрируем текст внутри */
+}

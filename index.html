@@ -3,94 +3,99 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Таможенные брокеры — Деловой сайт</title>
-  <meta name="description" content="Таможенное оформление для B2B: декларирование, классификация, сопровождение и контроль сроков." />
-  <meta name="theme-color" content="#0b0d0f" />
-  <link rel="stylesheet" href="styles-base.css">
-  <link rel="stylesheet" href="styles-proc.css">
+  <title>Шаблон: header/body/footer</title>
+
+    <link rel="stylesheet" href="сss/tokens.css">
+    <link rel="stylesheet" href="сss/layout.css">
+    <link rel="stylesheet" href="сss/section-top.css">
+    <link rel="stylesheet" href="сss/stats-panel.css">
+    <link rel="stylesheet" href="сss/section-bottom.css">
+    <link rel="stylesheet" href="сss/components.css">
+    <link rel="stylesheet" href="сss/responsive.css">
+
+
+    <link rel="stylesheet" href="сss/header.css">
+    <link rel="stylesheet" href="сss/footer.css">
+
+
+  <script defer src="js/lang.js"></script>
 </head>
-<body>
-  <main class="top">
-    <div class="container">
-      <!-- Лого + переключатель языков -->
-      <div class="logo-shelf">
-        <div class="logo-box"><img src="GCC_LOGO_500x500_symb_wh-1.png" alt="GCC — логотип" decoding="async"/></div>
-        <div class="lang-switch" role="group" aria-label="Выбор языка">
-          <button type="button" data-lang="lv" aria-pressed="false">LV</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
-          <button type="button" data-lang="ru" aria-pressed="true">RU</button>
-        </div>
+<body class="layout">
+    <header class="site-header">
+      <div class="container header-inner">
+        <img class="site-logo" src="img/GCC_LOGO_500x500_c-93x45.png" alt="GCC logo" width="93" height="45" decoding="async" />
+        <nav class="lang-switch" aria-label="Language selection">
+          <div class="lang-ui" data-active="en">
+            <div class="slider" aria-hidden="true"></div>
+            <button type="button" class="seg" data-lang="en" aria-pressed="true">ENG</button>
+            <button type="button" class="seg" data-lang="lv" aria-pressed="false">LV</button>
+            <button type="button" class="seg" data-lang="ru" aria-pressed="false">RU</button>
+          </div>
+        </nav>
       </div>
+    </header>
 
-      <!-- Герой -->
-      <section class="hero" aria-label="Вступительный блок">
-        <h1 data-i18n="h1">Таможенный брокер</h1>
-        <div class="typing" aria-live="polite" aria-label="Направления">
-          <span id="typingText"></span><span class="caret" aria-hidden="true"></span>
-        </div>
-        <div class="typing secondary" aria-live="polite" aria-label="Подзаголовок">
-          <span id="typingText2"></span><span class="caret" aria-hidden="true"></span>
-        </div>
-      </section>
-    </div>
-  </main>
+      <!-- Центр страницы -->
+        <main class="content">
+          <section class="section-top">
+            <div class="container section-top-inner">
+              <div class="section-topleft">
+                <h1 id="hero-title" class="hero-title">Customs clearance procedures</h1>
+              </div>
 
-  <!-- Плавающий док контактов (справа) -->
-  <div class="contact-dock" role="toolbar" aria-label="Быстрые контакты">
-    <button id="dockTelegram" class="dock-btn tg" type="button"
-            aria-controls="flyoutTelegram" aria-expanded="false" title="Telegram">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21.5 3.5L3.1 10.8c-.8.3-.8 1.5.02 1.8l4.7 1.6 1.8 4.9c.2.6 1 .7 1.4.3l2.6-2.7 4.7 3.5c.6.5 1.6.1 1.8-.7l2-14.2c.1-.8-.7-1.4-1.4-1.1zM8 12.6l9.7-5.9-7.5 7-.4 2.8 1.4-1.5 4 3"
-              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <button id="dockEmail" class="dock-btn mail" type="button"
-            aria-controls="flyoutEmail" aria-expanded="false" title="Email">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M3.5 7.5 L12 12.5 L20.5 7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-  </div>
 
-  <!-- Затемняющий фон -->
-  <div id="backdrop" class="backdrop" hidden></div>
+              <div class="section-topright">
+                <div class="stats-panel">
+                  <div class="stats-grid">
+                    <div class="stats-cell">
+                      <div class="stats-heading" id="col-import">Import</div>
+                      <p class="stats-desc" id="import-desc">
+                        Bringing goods into the European Union from other non-EU countries.
+                      </p>
+                    </div>
+                    <div class="stats-cell">
+                      <div class="stats-heading" id="col-export">Export</div>
+                      <p class="stats-desc" id="export-desc">
+                        Shipment of goods outside the European Union.
+                      </p>
+                    </div>
+                    <div class="stats-cell">
+                      <div class="stats-heading" id="col-transit">Transit</div>
+                      <p class="stats-desc" id="transit-desc">
+                        Movement of non-EU goods through the territory of the European Union.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-  <!-- Флай-ауты: в роли самой карточки -->
-  <aside id="flyoutTelegram" class="flyout" role="dialog" aria-modal="true" hidden>
-    <div class="row-left">
-      <svg class="tg-logo" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21.5 3.5L3.1 10.8c-.8.3-.8 1.5.02 1.8l4.7 1.6 1.8 4.9c.2.6 1 .7 1.4.3l2.6-2.7 4.7 3.5c.6.5 1.6.1 1.8-.7l2-14.2c.1-.8-.7-1.4-1.4-1.1zM8 12.6l9.7-5.9-7.5 7-.4 2.8 1.4-1.5 4 3"
-              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="contact-meta" id="flyoutTelegramHandle">@yourtelegram</span>
-    </div>
-    <div class="row-right">
-      <button class="copy-btn" id="copyTgBtn" type="button" aria-pressed="false" data-i18n="copy">Скопировать</button>
-      <button class="write-btn" id="writeTgBtn" type="button" data-i18n="write">Написать</button>
-    </div>
-  </aside>
 
-  <aside id="flyoutEmail" class="flyout" role="dialog" aria-modal="true" hidden>
-    <div class="row-left">
-      <svg class="mail-logo" viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M3.5 7.5 L12 12.5 L20.5 7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <a id="flyoutEmailLink" class="contact-meta" href="mailto:office@gcclog.com">office@gcclog.com</a>
-    </div>
-    <div class="row-right">
-      <button class="copy-btn" id="copyMailBtn" type="button" aria-pressed="false" data-i18n="copy">Скопировать</button>
-    </div>
-  </aside>
+            </div>
+          </section>
 
-  <footer class="site-footer" id="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span><span class="sep" aria-hidden="true">•</span><a data-i18n="company" href="#" class="footer-brand">Ваша Компания</a></span>
-    </div>
-  </footer>
+          <section class="section-bottom">
+            <div class="container section-bottom-inner">
+              <div class="bottom-left">
+                <p class="line" id="fact-years">15 лет опыта в сфере</p>
+                <p class="line" id="fact-shipments">1000 оформленных грузов</p>
+                <p class="line" id="fact-declarations">Декларации любой сложности</p>
+              </div>
 
-  <script defer src="app.js"></script>
-  <noscript>Для корректной работы переключения языков включите JavaScript.</noscript>
+              <div class="bottom-right">
+                <h2 id="contacts-title" class="contacts-title">Контакты</h2>
+                <div class="bottom-actions">
+                  <button type="button" id="hero-cta" class="cta-btn">Get Connected</button>
+                  <button type="button" id="urgent-cta" class="btn-urgent">Для срочных обращений</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <small id="footer-copy" class="footer-copy">GCC 2025 All rights reserved.</small>
+      </div>
+    </footer>
 </body>
 </html>

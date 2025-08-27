@@ -1,0 +1,51 @@
+/* Панель без рамок/линий */
+.stats-panel{
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  border: 0;              /* NEW: никаких линий */
+}
+
+/* Сетка колонок */
+.stats-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--section-gap);
+}
+
+/* Ячейка: чистый текст, центрирование */
+.stats-cell{
+  padding: 0;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* NEW */
+  text-align: center;      /* NEW */
+  gap: 8px;
+  background: transparent; /* NEW */
+  border: 0;               /* NEW */
+  box-shadow: none;        /* NEW */
+}
+
+.stats-heading{
+  color: var(--header-bg);
+  font-weight: 800;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.2;
+  letter-spacing: .01em;
+  text-align: center;      /* NEW */
+}
+
+.stats-desc{
+  margin: 0;
+  color: rgba(5, 36, 57, 0.85);
+  font-size: clamp(14px, 1.35vw, 16px);
+  line-height: 1.6;
+  max-width: 34ch;
+  text-align: center;      /* NEW */
+}
+
+/* Узкие экраны — стекаем */
+@media (max-width: 900px){
+  .stats-grid{ grid-template-columns: 1fr; }
+}
