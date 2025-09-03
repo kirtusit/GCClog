@@ -36,7 +36,6 @@
 }
 .btn-urgent:hover{ background: var(--cherry-dark); }
 
-
 .cta-btn{
   height: clamp(48px, 9vw, 70px);
   padding: 0 clamp(16px, 4vw, 24px);
@@ -47,4 +46,21 @@
   height: clamp(48px, 9vw, 70px);
   padding: 0 clamp(16px, 4vw, 24px);
   font-size: clamp(14px, 1.8vw, 16px);
+}
+
+/* Улучшения для мобильных устройств */
+@media (max-width: 480px) {
+  .cta-btn, .btn-urgent {
+    height: clamp(44px, 8vw, 60px);
+    font-size: clamp(13px, 1.6vw, 15px);
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cta-btn, .btn-urgent {
+    height: 40px;
+    font-size: 13px;
+    padding: 0 12px;
+  }
 }

@@ -1,0 +1,50 @@
+/* Адаптация */
+@media (max-width: 1200px){
+  .stats-grid{ grid-template-columns: 1fr; }
+  :root{ --header-h: 70px; }
+}
+
+@media (max-width: 900px){
+  :root{ --header-h: 68px; }
+}
+
+@media (max-width: 720px){
+  .section-top-inner{ 
+    grid-template-columns: 1fr; 
+    gap: 24px;
+  }
+  .section-bottom-inner{ 
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+  :root{ --header-h: 72px; } /* Вернули нормальную высоту */
+}
+
+@media (max-width: 600px){
+  :root{ --header-h: 68px; }
+}
+
+@media (max-width: 480px){
+  :root{ --header-h: 66px; }
+}
+
+@media (max-width: 420px){
+  :root{ --header-h: 64px; }
+}
+
+@media (max-width: 375px){ /* iPhone SE */
+  :root{ --header-h: 62px; } /* Достаточная высота для iPhone SE */
+}
+
+@media (max-width: 360px){
+  :root{ --header-h: 60px; }
+}
+
+@media (max-width: 320px){
+  :root{ --header-h: 58px; }
+}
+
+/* Специальные стили для очень маленьких высот экрана */
+@media (max-height: 600px) and (max-width: 720px) {
+  :root{ --header-h: 60px; }
+}

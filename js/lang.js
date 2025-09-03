@@ -5,9 +5,9 @@
 
   // Заголовок вверху
   const STR = {
-    en: 'Customs clearance procedures',
-    ru: 'Оформление таможенных процедур',
-    lv: 'Muitas procedūru noformēšana'
+  en: 'ORDER PROCESS EXAMPLE',
+  lv: 'PASŪTĪJUMA PROCESA PIEMĒRS',
+  ru: 'ПРИМЕР ОБРАБОТКИ ПРОЦЕССА'
   };
 
   // Кнопка
@@ -81,10 +81,37 @@
   };
 
   const PROC = {
-  en: { docs: 'Collect documents',    decl: 'File the declaration',  cleared: 'Goods released' },
-  lv: { docs: 'Saņemam dokumentus',   decl: 'Noformējam deklarāciju', cleared: 'Preces izlaistas' },
-  ru: { docs: 'Получаем документы',   decl: 'Оформляем декларацию',   cleared: 'Товар выпущен' }
-  };
+  en: { consult: 'Consultation',        docs: 'Collect documents',     decl: 'File the declaration', cleared: 'Goods released' },
+  lv: { consult: 'Konsultācija',        docs: 'Dokumentu sagatavošana', decl: 'Deklarācija formēšana', cleared: 'Preču izlaišana' },
+  ru: { consult: 'Консультация',        docs: 'Получаем документы',    decl: 'Оформляем декларацию',  cleared: 'Товар выпущен' }
+};
+
+const STEP = {
+  en: ['Step 1','Step 2','Step 3','Step 4'],
+  lv: ['Solis 1','Solis 2','Solis 3','Solis 4'],
+  ru: ['Шаг 1','Шаг 2','Шаг 3','Шаг 4']
+};
+
+const NEW_SECTION = {
+  en: {
+    title: 'THE CUSTOMS BROKERAGE IN EU',
+    desc: 'For all types transport and goods'
+  },
+  lv: {
+    title: 'MUITAS BROKERIS ES',
+    desc: 'Visiem transporta veidiem un precēm'
+  },
+  ru: {
+    title: 'ТАМОЖЕННЫЙ БРОКЕР В ЕС',
+    desc: 'Для всех видов транспорта и товаров'
+  }
+};
+
+const PROC_TITLE = {
+  en: 'We work with:',
+  lv: 'Mēs strādājam ar:',
+  ru: 'Мы работаем с:'
+};
 
   const ui = document.querySelector('.lang-ui');
   if (!ui) return;
@@ -112,9 +139,20 @@
   const exportDesc  = document.getElementById('export-desc');
   const transitDesc = document.getElementById('transit-desc');
 
+  const procConsult = document.getElementById('proc-consult');
   const procDocs   = document.getElementById('proc-docs');
   const procDecl   = document.getElementById('proc-decl');
   const procCleared= document.getElementById('proc-cleared');
+
+  const step1 = document.getElementById('step-1');
+  const step2 = document.getElementById('step-2');
+  const step3 = document.getElementById('step-3');
+  const step4 = document.getElementById('step-4');
+
+  const newSectionTitle = document.getElementById('new-section-title');
+  const newSectionDesc = document.getElementById('new-section-desc');
+
+  const proceduresTitle = document.getElementById('procedures-title');
 
   // Инициализация
   const saved = (localStorage.getItem(STORAGE_KEY) || '').toLowerCase();
@@ -159,8 +197,32 @@
     if (exportDesc)  exportDesc.textContent  = (DESC[lang] || DESC.en).export;
     if (transitDesc) transitDesc.textContent = (DESC[lang] || DESC.en).transit;
 
+    if (procConsult) procConsult.textContent = (PROC[lang] || PROC.en).consult;
     if (procDocs)    procDocs.textContent    = (PROC[lang] || PROC.en).docs;
     if (procDecl)    procDecl.textContent    = (PROC[lang] || PROC.en).decl;
     if (procCleared) procCleared.textContent = (PROC[lang] || PROC.en).cleared;
+
+    if (step1) step1.textContent = (STEP[lang] || STEP.en)[0];
+    if (step2) step2.textContent = (STEP[lang] || STEP.en)[1];
+    if (step3) step3.textContent = (STEP[lang] || STEP.en)[2];
+    if (step4) step4.textContent = (STEP[lang] || STEP.en)[3];
+
+    if (newSectionTitle) newSectionTitle.textContent = NEW_SECTION[lang].title;
+    if (newSectionDesc) newSectionDesc.textContent = NEW_SECTION[lang].desc;
+
+    if (proceduresTitle) proceduresTitle.textContent = PROC_TITLE[lang] || PROC_TITLE.en;
   }
 })();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const items = Array.from(document.querySelectorAll('.procedures .proc-item'));
+  let i = 0;
+  const stepMs = 280; // скорость появления
+  function showNext(){
+    if (i >= items.length) return;
+    items[i].classList.add('is-visible');
+    i++; setTimeout(showNext, stepMs);
+  }
+  showNext();
+});

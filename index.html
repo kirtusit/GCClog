@@ -2,21 +2,21 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Шаблон: header/body/footer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>GCC LOGISTICS HOME PAGE</title>
 
-    <link rel="stylesheet" href="сss/tokens.css">
-    <link rel="stylesheet" href="сss/layout.css">
-    <link rel="stylesheet" href="сss/section-top.css">
-    <link rel="stylesheet" href="сss/stats-panel.css">
-    <link rel="stylesheet" href="сss/section-bottom.css">
-    <link rel="stylesheet" href="сss/components.css">
-    <link rel="stylesheet" href="сss/responsive.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/section-top.css">
+    <link rel="stylesheet" href="css/stats-panel.css">
+    <link rel="stylesheet" href="css/section-bottom.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 
-    <link rel="stylesheet" href="сss/header.css">
-    <link rel="stylesheet" href="сss/footer.css">
-
+    <link rel="stylesheet" href="css/new-section.css">
 
   <script defer src="js/lang.js"></script>
 </head>
@@ -37,35 +37,41 @@
 
       <!-- Центр страницы -->
         <main class="content">
-          <section class="section-top">
-            <div class="container section-top-inner">
-
-
-              <div class="section-topleft">
-                <h1 id="hero-title" class="hero-title">Customs clearance procedures</h1>
-
-
-                <div class="procedures" role="list" aria-label="Customs clearance steps">
-                  <div class="proc-item" role="listitem">
-                    <img class="proc-icon" src="documents-symbol-svgrepo-com.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    <div class="proc-label" id="proc-docs">Collect documents</div>
-                  </div>
-                  <div class="proc-item" role="listitem">
-                    <img class="proc-icon" src="decease-deceased-declaration-svgrepo-com.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    <div class="proc-label" id="proc-decl">File the declaration</div>
-                  </div>
-                  <div class="proc-item" role="listitem">
-                    <img class="proc-icon" src="open-cardboard-box-svgrepo-com.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-                    <div class="proc-label" id="proc-cleared">Goods released</div>
-                  </div>
+          
+          <section class="new-section">
+            <div class="container">
+              <h2 id="new-section-title">THE CUSTOMS BROKERAGE IN EU</h2>
+              <p id="new-section-desc">For all types transport and goods</p>
+              
+              <div class="transport-icons">
+                <div class="transport-icon">
+                  <img src="icons/airplane.svg" alt="Airplane" class="transport-svg">
+                  <span class="transport-label">Air</span>
                 </div>
-
-
+                <div class="transport-icon">
+                  <img src="icons/train.svg" alt="Train" class="transport-svg">
+                  <span class="transport-label">Rail</span>
+                </div>
+                <div class="transport-icon">
+                  <img src="icons/truck.svg" alt="Truck" class="transport-svg">
+                  <span class="transport-label">Road</span>
+                </div>
+                <div class="transport-icon">
+                  <img src="icons/ferry.svg" alt="Ferry" class="transport-svg">
+                  <span class="transport-label">Sea</span>
+                </div>
               </div>
 
 
-              <div class="section-topright theme-glass layout-column">
+            </div>
+          </section>
+
+          <section class="section-top">
+            <div class="container section-top-inner">
+
+              <div class="section-topright theme-glass layout-row">
                 <div class="stats-panel">
+                  <h3 id="procedures-title" class="procedures-title">We work with:</h3>
                   <div class="stats-grid">
                     <div class="stats-cell">
                       <div class="stats-heading" id="col-import">Import</div>
@@ -88,6 +94,45 @@
                   </div>
                 </div>
               </div>
+
+
+              <div class="section-topleft">
+                <h1 id="hero-title">We handle customs procedures in the European Union</h1>
+
+
+              <div class="procedures" role="list" aria-label="Customs clearance steps">
+                <!-- Step 1 -->
+                <div class="proc-item" role="listitem">
+                  <img class="proc-icon" src="consultation-svgrepo-com.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                  <div class="proc-step" id="step-1">Step 1</div>
+                  <div class="proc-label" id="proc-consult">Consultation</div>
+                </div>
+                <!-- Step 2 -->
+                <div class="proc-item" role="listitem">
+                  <img class="proc-icon" src="documents-symbol-svgrepo-com.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                  <div class="proc-step" id="step-2">Step 2</div>
+                  <div class="proc-label" id="proc-docs">Collect documents</div>
+                </div>
+                <!-- Step 3 -->
+                <div class="proc-item" role="listitem">
+                  <img class="proc-icon" src="decease-deceased-declaration-svgrepo-com.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                  <div class="proc-step" id="step-3">Step 3</div>
+                  <div class="proc-label" id="proc-decl">File the declaration</div>
+                </div>
+                <!-- Step 4 -->
+                <div class="proc-item" role="listitem">
+                  <img class="proc-icon" src="open-cardboard-box-svgrepo-com.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                  <div class="proc-step" id="step-4">Step 4</div>
+                  <div class="proc-label" id="proc-cleared">Goods released</div>
+                </div>
+              </div>
+
+
+
+              </div>
+
+
+
 
 
             </div>

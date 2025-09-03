@@ -31,3 +31,10 @@ body.layout{
   .content{ grid-template-rows: auto auto; }
   .section-top, .section-bottom{ padding-block: 24px; }
 }
+
+/* Улучшения для мобильных устройств */
+@media (max-width: 480px) {
+  .container {
+    padding-inline: clamp(12px, 4vw, 20px);
+  }
+}

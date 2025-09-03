@@ -1,0 +1,112 @@
+/* Новая секция */
+.new-section {
+  height: 350px;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.new-section .container {
+  text-align: center;
+}
+
+.new-section h2 {
+  color: var(--header-bg);
+  font-size: 28px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.new-section p {
+  color: #6c757d;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* Контейнер для иконок транспорта */
+.transport-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.transport-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.transport-svg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.transport-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-bg);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .new-section {
+    height: 300px;
+    padding: 20px 0;
+  }
+  
+  .new-section h2 {
+    font-size: 24px;
+  }
+  
+  .new-section p {
+    font-size: 16px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+  
+  .transport-icons {
+    gap: 20px;
+  }
+  
+  .transport-svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-section {
+    height: 250px;
+  }
+  
+  .new-section h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .new-section p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .transport-icons {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .transport-svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .transport-label {
+    font-size: 12px;
+  }
+}

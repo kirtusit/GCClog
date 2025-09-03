@@ -1,0 +1,177 @@
+/* Header */
+.site-header{
+  background: var(--header-bg);
+  color: var(--header-fg);
+  height: var(--header-h);
+  display: block;
+  position: relative;
+  z-index: 1000; /* Гарантируем, что хедер будет поверх других элементов */
+}
+
+.site-header .container{
+  padding-inline: clamp(12px, 4vw, 28px);
+  height: 100%;
+}
+
+.header-inner{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: clamp(12px, 2.4vw, 20px);
+  gap: 12px;
+}
+
+.site-logo{
+  height: auto;
+  max-width: 120px;
+  max-height: 40px; /* Ограничиваем высоту относительно хедера */
+  display: block;
+  object-fit: contain;
+}
+
+/* Переключатель языка - адаптивные размеры */
+.lang-switch{ 
+  display: flex; 
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lang-ui{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.1); /* Легкий фон для всей панели */
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-pill);
+  user-select: none;
+  gap: 0;
+  --index: 0;
+  --pad: clamp(2px, 0.5vw, 4px);
+  padding: var(--pad);
+  backdrop-filter: blur(10px); /* Стеклянный эффект */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.lang-ui:hover {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.lang-ui .slider{
+  position: absolute;
+  top: var(--pad);
+  left: var(--pad);
+  height: calc(100% - 2 * var(--pad));
+  width:  calc((100% - 2 * var(--pad)) / 3);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.2),
+    0 4px 8px rgba(0,0,0,0.1);
+  transform: translateX(calc(var(--index) * 100%));
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
+}
+
+.seg{
+  position: relative;
+  z-index: 1;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  font: 600 system-ui, -apple-system, "Segoe UI", Roboto,
+        Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  padding: clamp(4px, 0.7vw, 6px) clamp(6px, 0.8vw, 8px);
+  font-size: clamp(9px, 0.8vw, 10px);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1 1 0;
+  min-width: 0;
+
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 24px;
+  transition: color 220ms ease;
+}
+
+.seg:hover{ 
+  opacity: .95; 
+  color: rgba(255,255,255,1);
+}
+
+.seg:focus-visible{ 
+  outline: 2px solid #fff; 
+  outline-offset: 2px; 
+}
+
+.seg[aria-pressed="true"]{ 
+  color: var(--header-bg); 
+  font-weight: 700;
+}
+
+/* Адаптивные настройки для мобильных устройств */
+@media (max-width: 768px) {
+  .site-logo {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    flex-wrap: nowrap;
+  }
+  
+  .site-logo {
+    max-width: 90px;
+  }
+  
+  .lang-ui {
+    transform: scale(0.85);
+    transform-origin: right center;
+  }
+}
+
+@media (max-width: 375px) { /* iPhone SE */
+  .site-header .container {
+    padding-inline: 10px;
+  }
+  
+  .header-inner {
+    gap: 6px;
+  }
+  
+  .site-logo {
+    max-width: 80px;
+  }
+  
+  .lang-ui {
+    transform: scale(0.8);
+  }
+  
+  .seg {
+    padding: 3px 5px;
+    font-size: 8px;
+    min-height: 22px;
+  }
+}
+
+@media (max-width: 320px) {
+  .site-logo {
+    max-width: 70px;
+  }
+  
+  .lang-ui {
+    transform: scale(0.75);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .lang-ui .slider{ transition: none; }
+}
