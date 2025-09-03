@@ -7,15 +7,6 @@
   min-height: 0;
 }
 
-.section-top-inner{
-  display: grid;
-  /* было: grid-template-columns: 1fr 1fr; */
-  grid-template-columns: 1fr;           /* ← одна колонка всегда */
-  gap: clamp(24px, 6vw, 60px);          /* комфортный зазор между блоками */
-  align-items: center;
-  justify-items: center;
-}
-
 /* Левая верхняя часть */
 .section-topleft{
   display: grid;
@@ -96,6 +87,34 @@
   overflow-wrap: break-word; /* Перенос длинных слов */
 }
 
+.section-procedures,
+.section-order{
+  background: #fff;
+  padding-block: clamp(20px, 5vw, 56px);
+  display: flex;
+  align-items: center;      /* выравниваем по центру вертикали внутри контейнера */
+}
+
+.procedures-title{
+  margin: 0 0 clamp(10px, 1.8vw, 14px);
+  font-weight: 800;
+  font-size: clamp(16px, 1.7vw, 20px);
+  letter-spacing: .01em;
+  color: var(--header-bg);
+  text-align: center;
+}
+
+.section-contacts{
+  background: #fff;
+  padding-block: clamp(20px, 5vw, 56px);
+}
+.contacts-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 2vw, 16px);
+}
+
 @media (max-width: 600px){
   .section-topleft{
     padding-top: clamp(24px, 6vh, 48px);
@@ -145,9 +164,6 @@
 
 /* Улучшения для мобильных устройств */
 @media (max-width: 768px) {
-  .section-top-inner {
-    gap: clamp(20px, 5vw, 40px);
-  }
   
   .hero-title {
     font-size: clamp(20px, 2.5vw, 32px);

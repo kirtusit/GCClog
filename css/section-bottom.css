@@ -10,7 +10,7 @@
 
 .section-bottom-inner{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr; /* было 1fr 1fr */
   gap: clamp(24px, 8vw, 120px);
   align-items: center;
   justify-items: center;

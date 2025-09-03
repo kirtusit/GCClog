@@ -9,10 +9,6 @@
 }
 
 @media (max-width: 720px){
-  .section-top-inner{ 
-    grid-template-columns: 1fr; 
-    gap: 24px;
-  }
   .section-bottom-inner{ 
     grid-template-columns: 1fr; 
     gap: 20px;
