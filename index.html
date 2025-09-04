@@ -18,9 +18,13 @@
 
     <link rel="stylesheet" href="css/new-section.css">
 
+    <link rel="stylesheet" href="css/quick-contact.css">
+
   <script defer src="js/lang.js"></script>
+  <script defer src="js/quick-contact.js"></script>
 </head>
 <body class="layout">
+  <button type="button" id="urgent-cta" class="btn-urgent"></button>
     <header class="site-header">
       <div class="container header-inner">
         <img class="site-logo" src="img/GCC_LOGO_500x500_c-93x45.png" alt="GCC logo" width="93" height="45" decoding="async" />
@@ -40,25 +44,21 @@
           
           <section class="new-section">
             <div class="container">
-              <h2 id="new-section-title">THE CUSTOMS BROKERAGE IN EU</h2>
-              <p id="new-section-desc">For all types transport and goods</p>
+              <h2 id="new-section-title"></h2>
+              <p id="new-section-desc"></p>
               
               <div class="transport-icons">
                 <div class="transport-icon">
                   <img src="icons/airplane.svg" alt="Airplane" class="transport-svg">
-                  <span class="transport-label">Air</span>
                 </div>
                 <div class="transport-icon">
                   <img src="icons/train.svg" alt="Train" class="transport-svg">
-                  <span class="transport-label">Rail</span>
                 </div>
                 <div class="transport-icon">
                   <img src="icons/truck.svg" alt="Truck" class="transport-svg">
-                  <span class="transport-label">Road</span>
                 </div>
                 <div class="transport-icon">
                   <img src="icons/ferry.svg" alt="Ferry" class="transport-svg">
-                  <span class="transport-label">Sea</span>
                 </div>
               </div>
 
@@ -71,26 +71,37 @@
               <div class="section-topright theme-glass layout-row">
                 <div class="stats-panel">
                   <!-- По желанию оставляем заголовок -->
-                  <h3 id="procedures-title" class="procedures-title">We work with:</h3>
+                  <h3 id="procedures-title" class="procedures-title"></h3>
 
                   <div class="stats-grid">
                     <div class="stats-cell">
-                      <div class="stats-heading" id="col-import">Import</div>
+                      <div class="stats-heading" id="col-import"></div>
                       <p class="stats-desc" id="import-desc">
-                        Bringing goods into the European Union from other non-EU countries.
                       </p>
                     </div>
                     <div class="stats-cell">
-                      <div class="stats-heading" id="col-export">Export</div>
+                      <div class="stats-heading" id="col-export"></div>
                       <p class="stats-desc" id="export-desc">
-                        Shipment of goods outside the European Union.
                       </p>
                     </div>
                     <div class="stats-cell">
-                      <div class="stats-heading" id="col-transit">Transit</div>
+                      <div class="stats-heading" id="col-transit"></div>
                       <p class="stats-desc" id="transit-desc">
-                        Movement of non-EU goods through the territory of the European Union.
                       </p>
+                    </div>
+                    <div class="stats-cell">
+                      <div class="stats-heading" id="svc-code">Подбор кода</div>
+                      <p class="stats-desc" id="svc-code-desc">Подбираем код под товары</p>
+                    </div>
+
+                    <div class="stats-cell">
+                      <div class="stats-heading" id="svc-sanctions">Проверка товара на санкции</div>
+                      <p class="stats-desc" id="svc-sanctions-desc">Проверяем груз в санкционных списках</p>
+                    </div>
+
+                    <div class="stats-cell">
+                      <div class="stats-heading" id="svc-strategic">Проверка стратегического отдела</div>
+                      <p class="stats-desc" id="svc-strategic-desc">Проверка товара на двойное назначение</p>
                     </div>
                   </div>
                 </div>
@@ -98,20 +109,11 @@
             </div>
           </section>
 
-          <section class="section-contacts" aria-labelledby="contacts-title">
-            <div class="container contacts-inner">
-              <h2 id="contacts-title" class="contacts-title">Contacts</h2>
-              <div class="bottom-actions">
-                <button type="button" id="hero-cta" class="cta-btn">Become our client</button>
-                <button type="button" id="urgent-cta" class="btn-urgent">For urgent inquiries</button>
-              </div>
-            </div>
-          </section>
 
           <section class="section-order">
             <div class="container">
               <div class="section-topleft">
-                <h1 id="hero-title">We handle customs procedures in the European Union</h1>
+                <h1 id="hero-title"></h1>
 
                   <div class="procedures" role="list" aria-label="Customs clearance steps">
                   <!-- Step 1 -->
@@ -144,13 +146,9 @@
           </section>
 
           <section class="section-bottom">
-            <div class="container section-bottom-inner">
-              <div class="bottom-left">
                 <p class="line" id="fact-years">15 лет опыта в сфере</p>
                 <p class="line" id="fact-shipments">1000 оформленных грузов</p>
                 <p class="line" id="fact-declarations">Декларации любой сложности</p>
-              </div>
-            </div>
           </section>
         </main>
 

@@ -1,6 +1,6 @@
 /* Новая секция */
 .new-section {
-  height: 350px;
+  height: 250px;
   background: #f8f9fa;
   display: flex;
   align-items: center;
@@ -56,8 +56,7 @@
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .new-section {
-    height: 300px;
-    padding: 20px 0;
+    height: 200px;
   }
   
   .new-section h2 {
@@ -82,7 +81,7 @@
 
 @media (max-width: 480px) {
   .new-section {
-    height: 250px;
+    height: 180px;
   }
   
   .new-section h2 {

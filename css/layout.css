@@ -29,7 +29,6 @@ body.layout{
 /* на очень коротких экранах убираем принудительное соотношение 70:30 */
 @media (max-height: 740px){
   .content{ grid-template-rows: auto auto; }
-  .section-top, .section-bottom{ padding-block: 24px; }
 }
 
 /* Улучшения для мобильных устройств */

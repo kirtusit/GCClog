@@ -5,9 +5,9 @@
 
   // Заголовок вверху
   const STR = {
-  en: 'ORDER PROCESS EXAMPLE',
-  lv: 'PASŪTĪJUMA PROCESA PIEMĒRS',
-  ru: 'ПРИМЕР ОБРАБОТКИ ПРОЦЕССА'
+  en: 'ORDER PROCESS',
+  lv: 'PASŪTĪJUMA PROCESS',
+  ru: 'ПРОЦЕСС ОБРАБОТКИ'
   };
 
   // Кнопка
@@ -18,9 +18,9 @@
   };
 
   const URGENT = {
-  en: 'For urgent inquiries',
-  lv: 'Steidzamiem jautājumiem',
-  ru: 'Для срочных обращений'
+  en: 'Contact us',
+  lv: 'Rakstiet mums',
+  ru: 'Пишите нам'
   };
 
   // Верхние три колонки
@@ -57,12 +57,12 @@
   // Факты внизу слева
   const FACT = {
   en: {
-    years: 'Over 15 years of successful experience',
-    shipments: '10,000+ shipments cleared',
+    years: 'Over 15 years of successful work experience',
+    shipments: '10 000 + shipments cleared',
     declarations: 'Any complexity doesn’t matter'
   },
   lv: {
-    years: 'Vairāk nekā 15 gadu veiksmīga pieredze',
+    years: 'Vairāk nekā 15 gadu veiksmīga darba pieredze',
     shipments: '10 000+ noformētu kravu',
     declarations: 'Sarežģītības līmenis nav šķērslis'
   },
@@ -75,9 +75,9 @@
 
   // Заголовок «Контакты»
   const CONTACTS = {
-    en: 'Contacts',
-    ru: 'Контакты',
-    lv: 'Kontakti'
+    en: 'OUR CONTACTS',
+    ru: 'НАШИ КОТАКТЫ',
+    lv: 'MÚSU KONTAKTI'
   };
 
   const PROC = {
@@ -94,23 +94,23 @@ const STEP = {
 
 const NEW_SECTION = {
   en: {
-    title: 'THE CUSTOMS BROKERAGE IN EU',
-    desc: 'For all types transport and goods'
+    title: 'THE CUSTOMS BROKERAGE',
+    desc: 'For all types transport, routes and goods'
   },
   lv: {
-    title: 'MUITAS BROKERIS ES',
-    desc: 'Visiem transporta veidiem un precēm'
+    title: 'MUITAS BROKERIS',
+    desc: 'Visiem transporta veidiem, maršrutiem un precēm'
   },
   ru: {
-    title: 'ТАМОЖЕННЫЙ БРОКЕР В ЕС',
-    desc: 'Для всех видов транспорта и товаров'
+    title: 'ТАМОЖЕННЫЙ БРОКЕР',
+    desc: 'Для всех видов транспорта, маршрутов и товаров'
   }
 };
 
 const PROC_TITLE = {
-  en: 'We work with:',
-  lv: 'Mēs strādājam ar:',
-  ru: 'Мы работаем с:'
+  en: 'READY TO WORK WITH',
+  lv: 'GATAVI STRĀDĀT AR',
+  ru: 'ГОТОВЫ РАБОТАТЬ С'
 };
 
   const ui = document.querySelector('.lang-ui');

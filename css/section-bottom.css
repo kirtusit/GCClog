@@ -1,117 +1,50 @@
-/* Нижняя секция */
+/* ==== Section Bottom — аккуратная центровка и типографика ==== */
 .section-bottom{
   background: var(--header-bg);
   color: #fff;
-  padding-block: clamp(24px, 6vw, 72px);
-  display: flex;
-  align-items: center;
-  min-height: max(0px, calc((100svh - var(--header-h) - var(--footer-h)) * 0.3));
-}
 
-.section-bottom-inner{
-  display: grid;
-  grid-template-columns: 1fr; /* было 1fr 1fr */
-  gap: clamp(24px, 8vw, 120px);
-  align-items: center;
-  justify-items: center;
-}
+  /* ты просил без внешних отступов сверху/снизу — оставляем */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-block: 0 !important;
 
-/* Левая колонка */
-.bottom-left{
+  /* делаем вертикальную колонку и центрируем её в секции */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 14px;
-  text-align: left;
+  align-items: center;     /* центрируем блок с текстом по горизонтали */
+  justify-content: center; /* центрируем по вертикали внутри min-height */
+  gap: 8px;                /* равномерный отступ между строками */
+
+  min-height: 150px;
+
+  /* чуть лучшая читаемость */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-.bottom-left .line{
+/* Текст “как в Word” — по ширине, но с разумной шириной колонки */
+.section-bottom .line,
+.section-bottom p{
   margin: 0;
-  font-weight: 800;
-  font-size: clamp(18px, 2.2vw, 24px);
-  line-height: 1.3;
-  letter-spacing: .01em;
-  position: relative;
-  padding-left: 28px;
+  max-width: 68ch;            /* комфортная ширина строки */
+  line-height: 1.5;
+
+  text-align: justify;        /* растягиваем по ширине */
+  text-justify: inter-word;   /* распределяем пробелы между словами */
+  hyphens: auto;              /* переносы зависят от <html lang="..."> */
+  text-align-last: left;      /* последняя строка влево, как в Word */
+  /* (опционально) подстройка размера на разных экранах:
+     font-size: clamp(14px, 2.1vw, 18px); */
 }
 
-.bottom-left .line::before{ content: none !important; }
-
-.bottom-left .line{
-  margin: 0;
-  font-weight: 700;
-  font-size: clamp(18px, 2.2vw, 24px);
-  line-height: 1.35;
-  letter-spacing: .005em;
-  color: #fff;
-  padding: 0;
-}
-
-/* Правая колонка */
-.bottom-right{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-.contacts-title{
-  margin: 0;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.2;
-  text-align: center;
-}
-
-/* Кнопки внизу справа (сейчас центрируем) */
-.bottom-actions{
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Улучшения для мобильных устройств */
-@media (max-width: 768px) {
-  .section-bottom-inner {
-    gap: clamp(20px, 6vw, 80px);
+/* На очень узких экранах justify даёт “реки” — делаем умный фолбэк */
+@media (max-width: 460px){
+  .section-bottom{
+    padding-inline: 16px;     /* чтобы текст не лип к краям */
   }
-  
-  .bottom-left .line {
-    font-size: clamp(16px, 2vw, 22px);
-    line-height: 1.3;
-  }
-  
-  .contacts-title {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-bottom-inner {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  .bottom-left {
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-  }
-  
-  .bottom-left .line {
-    font-size: clamp(15px, 1.8vw, 20px);
-  }
-  
-  .bottom-actions {
-    flex-direction: column;
-    width: 100%;
-    max-width: 280px;
-  }
-  
-  .bottom-actions .cta-btn,
-  .bottom-actions .btn-urgent {
-    width: 100%;
+  .section-bottom .line,
+  .section-bottom p{
+    text-align: left;         /* на узких — лучше ровнять по левому */
+    text-align-last: left;
   }
 }

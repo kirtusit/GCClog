@@ -18,35 +18,12 @@
 }
 .cta-btn:hover{ background: var(--cta-dark); }
 
-.btn-urgent{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 70px;
-  padding: 0 24px;
-  border-radius: 10px;
-  border: 0;
-  background: var(--cherry);
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-.btn-urgent:hover{ background: var(--cherry-dark); }
-
 .cta-btn{
   height: clamp(48px, 9vw, 70px);
   padding: 0 clamp(16px, 4vw, 24px);
   font-size: clamp(14px, 1.8vw, 16px);
 }
 
-.btn-urgent{
-  height: clamp(48px, 9vw, 70px);
-  padding: 0 clamp(16px, 4vw, 24px);
-  font-size: clamp(14px, 1.8vw, 16px);
-}
 
 /* Улучшения для мобильных устройств */
 @media (max-width: 480px) {

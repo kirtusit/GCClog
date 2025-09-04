@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: start;
   gap: clamp(12px, 3vw, 24px) clamp(16px, 4vw, 40px);
-  margin-top: clamp(16px, 3.5vw, 28px);
+  margin-top: clamp(0px, 3.5vw, 0px);
   padding-top: clamp(4px, 1.5vw, 10px);
 }
 
@@ -87,12 +87,18 @@
   overflow-wrap: break-word; /* Перенос длинных слов */
 }
 
-.section-procedures,
-.section-order{
+.section-procedures{
   background: #fff;
-  padding-block: clamp(20px, 5vw, 56px);
   display: flex;
   align-items: center;      /* выравниваем по центру вертикали внутри контейнера */
+}
+
+
+.section-order{
+  background: #fff;
+  display: flex;
+  align-items: center;      /* выравниваем по центру вертикали внутри контейнера */
+  margin-bottom: 40px;
 }
 
 .procedures-title{
@@ -102,17 +108,6 @@
   letter-spacing: .01em;
   color: var(--header-bg);
   text-align: center;
-}
-
-.section-contacts{
-  background: #fff;
-  padding-block: clamp(20px, 5vw, 56px);
-}
-.contacts-inner{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(12px, 2vw, 16px);
 }
 
 @media (max-width: 600px){
@@ -148,6 +143,11 @@
     padding: 0 2px;
     max-width: 80px; /* Еще меньше для мобильных */
   }
+
+  .section-order{
+  margin-bottom: 0px;
+}
+
 }
 
 @media (max-width: 360px){
@@ -160,6 +160,11 @@
     font-size: 10px;
     margin-top: 2px;
   }
+
+  .section-order{
+  margin-bottom: 0px;
+}
+
 }
 
 /* Улучшения для мобильных устройств */
