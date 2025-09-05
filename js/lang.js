@@ -18,9 +18,9 @@
   };
 
   const URGENT = {
-  en: 'Contact us',
-  lv: 'Rakstiet mums',
-  ru: 'Пишите нам'
+  en: 'CONTACTS',
+  lv: 'KONTAKTI',
+  ru: 'КОНТАКТЫ'
   };
 
   // Верхние три колонки

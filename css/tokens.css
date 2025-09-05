@@ -22,9 +22,4 @@ html, body { height: 100%; }
   --container-max: 1200px;
   --container-pad: clamp(16px, 4vw, 40px);
 
-  /* кнопки */
-  --cta: rgb(86, 106, 229);
-  --cta-dark: rgb(72, 90, 208);
-  --cherry: #b00020;
-  --cherry-dark: #8e001b;
 }
